@@ -1,7 +1,7 @@
 import streamlit as st
 from abc import ABC, abstractmethod
 
-# ── Page config ────────────────────────────────────────────────────────────────
+# Page configuration
 st.set_page_config(
     page_title="CropCompass",
     page_icon="🌱",
@@ -9,7 +9,7 @@ st.set_page_config(
     initial_sidebar_state="collapsed",
 )
 
-# ── CSS ────────────────────────────────────────────────────────────────────────
+# Streamlit page styling
 st.markdown("""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap');
@@ -271,13 +271,12 @@ html, body, [data-testid="stAppViewContainer"] {
 </style>
 """, unsafe_allow_html=True)
 
-
-# ══════════════════════════════════════════════════════════════════════════════
-# ── Business Logic — ported from updated notebook ─────────────────────────────
-# ══════════════════════════════════════════════════════════════════════════════
+# Business Logic — ported from updated notebook
 
 class FarmResource:
-    """Calculates farm resources: labour, fertilizer, and overall expenses."""
+    """
+    Calculates farm resources: labour, fertilizer, and overall expenses.
+    """
 
     clearing_constant            = 1002   # GH₵ per acre, industry standard
     farm_labour_constant         = 1008   # GH₵ per acre, industry standard
@@ -306,7 +305,6 @@ class FarmResource:
         return 0
 
     def labour_cost(self):
-        # NOTE: notebook has a typo (labour_constant); correct attr is farm_labour_constant
         return FarmResource.farm_labour_constant * self.acre
 
     def total_fertilizer_cost(self):
@@ -458,7 +456,7 @@ class Crop(CropFunctionality):
         return net_revenue, gross_revenue, all_expenses, total_of_seed, total_yield
 
 
-# ── Helpers ───────────────────────────────────────────────────────────────────
+# Helper variables
 
 REGION_CROPS = {
     "Northern Ghana": ["Cotton", "Groundnut", "Sorghum", "Tomato"],
@@ -477,6 +475,7 @@ REGION_NOTES = {
 
 COMPANY_NUMBER = "0244454647"
 
+# Computing forecast
 
 def compute_forecast(region: str, crop: str, acres: int, is_cleared: bool) -> dict:
     """
@@ -521,18 +520,13 @@ def compute_forecast(region: str, crop: str, acres: int, is_cleared: bool) -> di
     }
 
 
-# ══════════════════════════════════════════════════════════════════════════════
-# ── Session state ─────────────────────────────────────────────────────────────
-# ══════════════════════════════════════════════════════════════════════════════
+# Session state for Streamlit 
 
 for k, v in {"step":1,"name":"","region":None,"crop":None,"acres":1,"cleared":True,"forecast":None}.items():
     if k not in st.session_state:
         st.session_state[k] = v
 
-
-# ══════════════════════════════════════════════════════════════════════════════
-# ── Hero ──────────────────────────────────────────────────────────────────────
-# ══════════════════════════════════════════════════════════════════════════════
+# Hero section for Streamlit
 
 st.markdown("""
 <div class="hero">
@@ -543,7 +537,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 
-# ── Step bar ──────────────────────────────────────────────────────────────────
+# Step bar
 
 step = st.session_state["step"]
 steps = ["📋 Farm Details", "📊 Financial Forecast", "✅ Done"]
@@ -562,9 +556,7 @@ st.markdown(
 )
 
 
-# ══════════════════════════════════════════════════════════════════════════════
-# ── STEP 1 — Farm Details ─────────────────────────────────────────────────────
-# ══════════════════════════════════════════════════════════════════════════════
+# STEP 1 - Farm Details 
 
 if st.session_state["step"] == 1:
 
@@ -660,9 +652,7 @@ if st.session_state["step"] == 1:
             st.rerun()
 
 
-# ══════════════════════════════════════════════════════════════════════════════
-# ── STEP 2 — Financial Forecast ───────────────────────────────────────────────
-# ══════════════════════════════════════════════════════════════════════════════
+# STEP 2 — Financial Forecast
 
 elif st.session_state["step"] == 2:
     f      = st.session_state["forecast"]
@@ -796,10 +786,7 @@ elif st.session_state["step"] == 2:
             st.session_state["step"] = 3
             st.rerun()
 
-
-# ══════════════════════════════════════════════════════════════════════════════
-# ── STEP 3 — Done ─────────────────────────────────────────────────────────────
-# ══════════════════════════════════════════════════════════════════════════════
+# STEP 3 - End page
 
 elif st.session_state["step"] == 3:
     nm = st.session_state["name"]
