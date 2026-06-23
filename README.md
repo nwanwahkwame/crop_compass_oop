@@ -1,6 +1,24 @@
-# 🌱 CropCompass — Agricultural Financial Projection
+# CropCompass : Agricultural Financial Projection
 
-A Streamlit GUI for the CropCompass farming financial tool (Ghana).
+A Streamlit GUI for the CropCompass farming financial tool.
+
+---
+
+## What this project does
+
+CropCompass is an Object-Oriented Programming Python approach to rudimentary agricultural preparations.
+The aim is to give small-scale, subsistent farmers an idea of the financial obligations they may bear should they choose to scale.
+
+---
+
+## Collaborators
+
+1. Rauda Zurak Alhassan [GitHub](https://github.com/Ena753 "Ena's repo")
+2. Kwame Boadi Nwanwah [GitHub](https://github.com/nwanwahkwame "Kwame's repo")
+3. Anuonyam Jackson [GitHub](https://github.com/mateyolivia-maker "Livy's repo")
+4. Mercy Amankwaa [GitHub](https://github.com/Ing-RAKE "Ing_Rake's repo")
+5. Charlyn Oseini [GitHub](https://github.com/Eshun-Rebecca "Becks' repo")
+---
 
 ## Setup & Run
 
