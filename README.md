@@ -13,11 +13,11 @@ The aim is to give small-scale, subsistent farmers an idea of the financial obli
 
 ## Collaborators
 
-1. Rauda Zurak Alhassan [GitHub](https://github.com/Ena753 "Ena's repo")
+1. Rauda Zurak Alhassan [GitHub](https://github.com/raudazurak "Rauda's repo")
 2. Kwame Boadi Nwanwah [GitHub](https://github.com/nwanwahkwame "Kwame's repo")
-3. Anuonyam Jackson [GitHub](https://github.com/mateyolivia-maker "Livy's repo")
-4. Mercy Amankwaa [GitHub](https://github.com/Ing-RAKE "Ing_Rake's repo")
-5. Charlyn Oseini [GitHub](https://github.com/Eshun-Rebecca "Becks' repo")
+3. Anuonyam Jackson [GitHub](https://github.com/anuonyamjackson2223 "Anuonyam's repo")
+4. Mercy Amankwaa [GitHub](https://github.com/Mercy9466 "Mercy's repo")
+5. Charlyn Oseini [GitHub]("Charlyn's repo")
 ---
 
 ## Setup & Run
