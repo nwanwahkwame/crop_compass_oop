@@ -31,14 +31,14 @@ streamlit run app.py
 
 The app is a **3-step wizard**:
 
-1. **Farm Details** — Enter your name, select your region (Northern / Mid / Southern Ghana), pick a crop available for that region, set land size (acres), and confirm if the land is already cleared.
-2. **Financial Forecast** — Instantly see your:
+1. **Farm Details** - Enter your name, select your region (Northern / Mid / Southern Ghana), pick a crop available for that region, set land size (acres), and confirm if the land is already cleared.
+2. **Financial Forecast** - Instantly see your:
    - Projected profit or loss
    - Gross revenue
    - Full cost breakdown (seed, fertilizer, labour, clearing)
    - Crop info (duration, spacing, irrigation type, fertilizer type)
    - Visual expense bar chart
-3. **Done** — Thank-you screen with consultancy contact.
+3. **Done** - Thank-you screen with consultancy contact.
 
 ## Regional Pricing Logic (from original notebook)
 | Region | Cost Adjustment |
